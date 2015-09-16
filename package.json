@@ -1,6 +1,6 @@
 {
   "name": "code42day-picker",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Building block for a floating interactive popup",
   "scripts": {
     "test": "make check"
