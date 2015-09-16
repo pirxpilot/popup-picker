@@ -1,0 +1,30 @@
+{
+  "name": "code42day-picker",
+  "version": "0.0.0",
+  "description": "Building block for a floating interactive popup",
+  "scripts": {
+    "test": "make check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code42day/picker.git"
+  },
+  "keywords": [
+    "browser"
+  ],
+  "dependencies": {
+    "component-emitter": "^1.1.2",
+    "component-event": "^0.1.3",
+    "popover-component": "^1.1.1"
+  },
+  "browser": {
+    "emitter": "component-emitter",
+    "event": "component-event",
+    "popover": "popover-component"
+  },
+  "author": "Damian Krzeminski <pirxpilot@code42day.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/code42day/picker/issues"
+  }
+}
