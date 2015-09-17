@@ -5,9 +5,9 @@
   "version": "1.0.0",
   "keywords": [],
   "dependencies": {
+    "code42day/popover": "*",
     "component/emitter": "1.1.2",
-    "component/event": "0.1.3",
-    "component/popover": "1.1.0"
+    "component/event": "0.1.3"
   },
   "development": {
     "component/aurora-popover": "*"
