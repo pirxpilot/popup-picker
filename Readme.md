@@ -8,11 +8,7 @@
 
 ## Installation
 
-    $ npm install code42day-picker
-
-or
-
-    $ component install code42day/picker
+    $ npm install popup-picker
 
 ## Example
 
@@ -46,6 +42,6 @@ Direct access to `item` passed in constructor
 
   MIT
 
-[popover]: https://github.com/component/popover
-[clock]: https://github.com/code42day/clock
-[calendar]: https://github.com/code42day/calendar
+[popover]: https://github.com/pirxpilot/popover
+[clock]: https://github.com/pirxpilot/clock
+[calendar]: https://github.com/pirxpilot/calendar

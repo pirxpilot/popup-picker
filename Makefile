@@ -1,6 +1,6 @@
 PROJECT=picker
 SRC=index.js
-CSS=node_modules/code42day-popover/node_modules/code42day-tip/tip.css
+CSS=node_modules/code42day-tip/tip.css
 
 all: check compile
 
