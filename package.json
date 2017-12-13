@@ -29,5 +29,9 @@
   },
   "stringify": {
     "minify": true
-  }
+  },
+  "files": [
+    "index.js",
+    "picker.css"
+  ]
 }
