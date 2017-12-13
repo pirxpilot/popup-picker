@@ -25,6 +25,9 @@
   "author": "Damian Krzeminski <pirxpilot@fukot.com>",
   "license": "MIT",
   "devDependencies": {
-    "stringify": "^3.1.0"
+    "stringify": "~5"
+  },
+  "stringify": {
+    "minify": true
   }
 }
