@@ -13,8 +13,8 @@
     "browser"
   ],
   "dependencies": {
-    "@pirxpilot/popover": "^1.1.1",
-    "component-emitter": "^1.1.2"
+    "@pirxpilot/popover": "~1",
+    "component-emitter": "~1"
   },
   "browser": {
     "emitter": "component-emitter",
