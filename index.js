@@ -1,6 +1,5 @@
 var Popover = require('popover'),
-  Emitter = require('emitter'),
-  event = require('event');
+  Emitter = require('emitter');
 
 module.exports = Picker;
 
@@ -30,17 +29,19 @@ function clickOutside(elements, fn) {
   function on() {
     var html = document.documentElement;
     handlers = elements.map(function(el) {
-      return event.bind(el, 'mousedown', stop.bind(el));
+      var handler = stop.bind(el);
+      el.addEventListener('mousedown', handler);
+      return handler;
     });
-    event.bind(html, 'mousedown', pass);
+    html.addEventListener('mousedown', pass);
     return self;
   }
 
   function off() {
     var html = document.documentElement;
-    event.unbind(html, 'mousedown', pass);
+    html.removeEventListener('mousedown', pass);
     elements.forEach(function(el, i) {
-      event.unbind(el, 'mousedown', handlers[i]);
+      el.removeEventListener('mousedown', handlers[i]);
     });
     return self;
   }
@@ -65,10 +66,10 @@ function Picker(el, item) {
   this.item = item.on('change', this.onchange.bind(this));
   this._hasComplete = 'isComplete' in this.item;
   if (useFocus(el)) {
-    event.bind(el, 'focus', this.onfocus.bind(this));
-    event.bind(el, 'blur', this.onblur.bind(this));
+    el.addEventListener('focus', this.onfocus.bind(this));
+    el.addEventListener('blur', this.onblur.bind(this));
   } else {
-    event.bind(el, 'click', this.onclick.bind(this));
+    el.addEventListener('click', this.onclick.bind(this));
   }
 }
 

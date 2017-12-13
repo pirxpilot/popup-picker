@@ -14,12 +14,10 @@
   ],
   "dependencies": {
     "@pirxpilot/popover": "^1.1.1",
-    "component-emitter": "^1.1.2",
-    "component-event": "^0.1.3"
+    "component-emitter": "^1.1.2"
   },
   "browser": {
     "emitter": "component-emitter",
-    "event": "component-event",
     "popover": "@pirxpilot/popover"
   },
   "author": "Damian Krzeminski <pirxpilot@fukot.com>",
