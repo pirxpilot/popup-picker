@@ -1,6 +1,6 @@
 PROJECT=picker
 SRC=index.js
-CSS=node_modules/code42day-tip/tip.css
+CSS=node_modules/@pirxpilot/tip/tip.css picker.css
 
 all: check compile
 
@@ -22,7 +22,7 @@ build/build.js: node_modules $(SRC) | build
 .DELETE_ON_ERROR: build/build.js
 
 node_modules: package.json
-	npm install
+	npm install && touch $@
 
 lint:
 	jshint $(SRC)
