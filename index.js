@@ -1,5 +1,5 @@
-const Popover = require('popover');
-const Emitter = require('emitter');
+const Popover = require('@pirxpilot/popover');
+const Emitter = require('component-emitter');
 
 /*global document*/
 

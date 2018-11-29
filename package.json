@@ -16,10 +16,6 @@
     "@pirxpilot/popover": "~2",
     "component-emitter": "~1"
   },
-  "browser": {
-    "emitter": "component-emitter",
-    "popover": "@pirxpilot/popover"
-  },
   "author": "Damian Krzeminski <pirxpilot@fukot.com>",
   "license": "MIT",
   "devDependencies": {
