@@ -16,18 +16,30 @@ $(CSS): | node_modules
 build/build.css: $(CSS) | build
 	cat $^ > $@
 
-build/build.js: node_modules $(SRC) | build
-	browserify --require ./index.js:$(PROJECT) --outfile $@
-
-.DELETE_ON_ERROR: build/build.js
+build/build.js: $(SRC) | node_modules build
+	esbuild \
+		--bundle $< \
+		--define:DEBUG=true \
+		--global-name=$(PROJECT) \
+		--sourcemap \
+		--outfile=$@
 
 node_modules: package.json
-	npm install && touch $@
-
-lint:
-	jshint $(SRC)
+	yarn
+	touch $@
 
 clean:
 	rm -fr build node_modules
 
-.PHONY: clean lint check all compile
+.PHONY: clean check all compile
+
+check: lint
+
+lint:
+	biome ci
+
+format:
+	biome check --fix
+
+.PHONY: check format lint
+
