@@ -1,5 +1,5 @@
-const Popover = require('@pirxpilot/popover');
-const Emitter = require('component-emitter');
+import Popover from '@pirxpilot/popover';
+import Emitter from 'component-emitter';
 
 function clickOutside(elements, fn) {
   const self = {
@@ -57,7 +57,7 @@ function useFocus(el) {
   return tag === 'textarea' || tag === 'select';
 }
 
-class Picker extends Emitter {
+export default class Picker extends Emitter {
   constructor(el, item) {
     super();
     Emitter.call(this);
@@ -138,5 +138,3 @@ class Picker extends Emitter {
     return this;
   }
 }
-
-module.exports = Picker;
