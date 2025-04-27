@@ -1,8 +1,6 @@
 const Popover = require('@pirxpilot/popover');
 const Emitter = require('component-emitter');
 
-/*global document*/
-
 function clickOutside(elements, fn) {
   const self = {
     on,
@@ -29,7 +27,7 @@ function clickOutside(elements, fn) {
 
   function on() {
     const html = document.documentElement;
-    handlers = elements.map(function(el) {
+    handlers = elements.map(function (el) {
       const handler = stop.bind(el);
       el.addEventListener('mousedown', handler);
       return handler;
@@ -41,7 +39,7 @@ function clickOutside(elements, fn) {
   function off() {
     const html = document.documentElement;
     html.removeEventListener('mousedown', pass);
-    elements.forEach(function(el, i) {
+    elements.forEach(function (el, i) {
       el.removeEventListener('mousedown', handlers[i]);
     });
     return self;
@@ -56,13 +54,12 @@ function useFocus(el) {
     const { type } = el;
     return type === 'text' || type === 'time' || type === 'date';
   }
-  return (tag === 'textarea' || tag === 'select');
+  return tag === 'textarea' || tag === 'select';
 }
 
 class Picker extends Emitter {
   constructor(el, item) {
     super();
-    if (!(this instanceof Picker)) return new Picker(el, item);
     Emitter.call(this);
     this.el = el;
     this.item = item.on('change', (...args) => this.onchange(...args));
