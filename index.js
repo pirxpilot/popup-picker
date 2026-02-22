@@ -27,7 +27,7 @@ function clickOutside(elements, fn) {
 
   function on() {
     const html = document.documentElement;
-    handlers = elements.map(function (el) {
+    handlers = elements.map(el => {
       const handler = stop.bind(el);
       el.addEventListener('mousedown', handler);
       return handler;
@@ -39,7 +39,7 @@ function clickOutside(elements, fn) {
   function off() {
     const html = document.documentElement;
     html.removeEventListener('mousedown', pass);
-    elements.forEach(function (el, i) {
+    elements.forEach((el, i) => {
       el.removeEventListener('mousedown', handlers[i]);
     });
     return self;
